@@ -1,4 +1,4 @@
-package exercise4;
+
 
 public class Point {
 	double x;
