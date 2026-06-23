@@ -1,5 +1,3 @@
-package exercise4;
-
 public class Trapezoid {
 	Point A;
 	Point B;
