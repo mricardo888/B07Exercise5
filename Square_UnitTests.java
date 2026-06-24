@@ -1,0 +1,49 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class Square_UnitTests {
+
+    @Test
+    public void testSquarePerimeter() {
+        Point A = new Point(0, 0);
+        Point B = new Point(1, 0);
+        Point C = new Point(1, 1);
+        Point D = new Point(0, 1);
+        Square s = new Square(A, B, C, D);
+
+        assertEquals(4, s.perimeter(), 0.0001);
+    }
+
+    @Test
+    public void testPerimeterRectangle() {
+        Point pA = new Point(0, 0);
+        Point pB = new Point(5, 0);
+        Point pC = new Point(5, 3);
+        Point pD = new Point(0, 3);
+        Square rect = new Square(pA, pB, pC, pD);
+
+        assertEquals(16, rect.perimeter(), 0.0001);
+    }
+
+    @Test
+    public void testIsSquare_ReturnFalse() {
+        Point pA = new Point(0, 0);
+        Point pB = new Point(4, 0);
+        Point pC = new Point(4, 4);
+        Point pD = new Point(0, 5);
+        Square notSquare = new Square(pA, pB, pC, pD);
+        
+        assertFalse(notSquare.isSquare());
+    }
+    
+    @Test
+    public void testIsSquareAllSidesEqual() {
+        Point pA = new Point(0, 0);
+        Point pB = new Point(2, 0);
+        Point pC = new Point(2, 2);
+        Point pD = new Point(0, 2);
+        Square s = new Square(pA, pB, pC, pD);
+        
+        assertTrue(s.isSquare());
+    }
+}
